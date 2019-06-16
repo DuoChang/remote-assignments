@@ -28,7 +28,7 @@ header span{
 }
 
 header{
-	Padding:21px 100%;
+	padding:21px 100%;
 	background-color: lightgrey;
 	border-radius: 5px;
 }
@@ -145,10 +145,15 @@ header{
 
 .banner{
 	margin-top:80px;
+	text-align: center;
+}
+
+
+main{
+	text-align: center;
 }
 
 .sectiontitle{
-	text-align:center;
 	font-family:monospace,arial,sans-serif;
 	text-decoration: underline;
 	font-size:1em;
@@ -162,7 +167,6 @@ header{
 .content2about{
 	background-color:peru;
 	width: 50%;
-	grid-template-rows: fit-content(100%);
 }
 .content2about p{
 	text-align: center;
@@ -182,8 +186,9 @@ header{
 .content2about,
 .content3comment,
 .content4buy{
+	text-align: left;
 	overflow: auto;
-	margin:auto auto;
+	min-height:300px;
 }
 
 .content1and2{
@@ -243,6 +248,12 @@ footer{
 	.banner h1 span{
 		font-size:1em;
 		font-weight:bold;
+	}
+	.content1news,
+	.content2about,
+	.content3comment,
+	.content4buy{
+	min-height:450px;
 	}
 }
 
