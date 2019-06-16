@@ -1,0 +1,269 @@
+/*Basic style*/
+
+*{
+	box-sizing:border-box;
+}
+
+body{
+	left:0;
+	right:0;
+}
+
+a:hover{
+	color:forestgreen;
+}
+
+header span{
+	font-family:fantasy;
+	font-size:1em;
+}
+
+.productlists li{
+	font-family:system-ui;
+	font-weight: bold;
+	font-size:1em;
+	background-color: moccasin;
+	border-radius:20%;
+	flex-direction: row;
+}
+
+header{
+	Padding:21px 100%;
+	background-color: lightgrey;
+	border-radius: 5px;
+}
+
+.banner{
+	background: linear-gradient(white,transparent 55%),
+				url('pics and icons/背景照片.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height:350px;
+	border-radius: 5px;
+}
+
+.banner h1 span{
+	font-size:2em;
+	color:orangered;
+	font-weight:bold;
+	font-family:DFKai-SB,arial,sans-serif;
+}
+
+main h1{
+	font-family:"Microsoft JhengHei",arial,sans-serif;
+}
+
+main div div{
+	border: 3px double black;
+	border-radius: 2px;
+}
+
+main div div h1{
+	background-color: white;
+	border-bottom: 3px double black;
+	margin-top:0;
+}
+
+main p{
+	font-family:sans-serif;
+}
+
+footer{
+	font-family:monospace,arial,sans-serif;
+	background-color: lightgrey ;
+}
+
+/*Pictures & icons*/
+
+.haticon{
+	width: 42px;
+	height: 42px;
+}
+
+.menulist{
+	width:42px;
+	height:42px;
+}
+
+.mainphoto{
+	width:100%;
+	height:auto;
+}
+
+.newbag{
+	width: 136px;
+	height:136px;
+}
+
+.tobuyimage{
+	width: 48px;
+	height:56px;
+}
+
+/*Layouts*/
+
+.wrapper {
+	min-height: 100vh;
+}
+
+header{
+	position:fixed;
+	top:0;
+}
+
+.productlists{
+	display:flex;
+	list-style-type: none;
+	position: fixed;
+	right:0;
+	top:0;
+}
+
+.productlists li{
+	padding: 0 15px;
+	margin:0 15px;
+}
+
+.menulist{
+	display:none;
+	position: fixed;
+	right:0;
+	top:0;
+}
+
+.haticon{
+	position: fixed;
+	left:0;
+	top:0;
+}
+
+.innertitle {
+	position:fixed;
+	left:45px;
+	top:10px;
+}
+
+.banner{
+	margin-top:80px;
+}
+
+.sectiontitle{
+	text-align:center;
+	font-family:monospace,arial,sans-serif;
+	text-decoration: underline;
+	font-size:1em;
+}
+
+.content1news{
+	background-color:greenyellow;
+	width: 50%;
+}
+
+.content2about{
+	background-color:peru;
+	width: 50%;
+	grid-template-rows: fit-content(100%);
+}
+.content2about p{
+	text-align: center;
+}
+
+.content3comment{
+	background-color:peru;
+	width: 50%;
+}
+
+.content4buy{
+	background-color:greenyellow;
+	width: 50%;
+}
+
+.content1news,
+.content2about,
+.content3comment,
+.content4buy{
+	overflow: auto;
+	margin:auto auto;
+}
+
+.content1and2{
+	max-width: 1200px;
+	display:flex;
+	flex-direction: row;
+}
+
+.content3and4{
+	max-width: 1200px;
+	display:flex;
+	flex-direction: row;
+}
+
+.lstinconent4{
+	list-style-type:square;
+}
+
+.sublstinconten4{
+	list-style-type:disc;
+}
+
+.calltobuy{
+	text-align: center;
+	margin: 30px;
+}
+
+.gotobuytext{
+	font-size:1em;
+	text-decoration: underline;
+	margin-top:3px;
+}
+
+footer{
+	text-align: center;
+	min-height: calc(100vh-18.82px);
+}
+
+/*Media breakpoints setting*/
+
+@media (max-width:1200px){
+	.wrapper{
+		width:80%;
+	}
+}
+
+@media(max-width:800px){
+	.wrapper{
+		width:80%;
+	}
+	.productlists{
+		display:none;
+	}
+	.menulist{
+		display:inline-block;
+	}
+	.banner h1 span{
+		font-size:1em;
+		font-weight:bold;
+	}
+}
+
+@media(max-width:500px){
+	.productlists{
+		display:none;
+	}
+	.menulist{
+		display:inline-block;
+	}
+	.wrapper{
+		width:80%;
+		margin: 0 auto;
+	}
+	.content1and2,
+	.content3and4{
+		display:flex;
+		flex-direction: column;
+	}
+	.banner h1 span{
+		font-size:.5em;
+		font-weight:bold;
+	}
+}
