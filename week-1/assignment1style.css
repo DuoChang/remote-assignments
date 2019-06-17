@@ -4,11 +4,6 @@
 	box-sizing:border-box;
 }
 
-body{
-	left:0;
-	right:0;
-}
-
 a:hover{
 	color:forestgreen;
 }
@@ -24,7 +19,6 @@ header span{
 	font-size:1em;
 	background-color: moccasin;
 	border-radius:20%;
-	flex-direction: row;
 }
 
 header{
@@ -102,6 +96,12 @@ footer{
 
 /*Layouts*/
 
+body{
+	left:0;
+	right:0;
+	text-align: center;
+}
+
 .wrapper {
 	min-height: 100vh;
 }
@@ -114,6 +114,7 @@ header{
 .productlists{
 	display:flex;
 	list-style-type: none;
+	flex-direction: row;
 	position: fixed;
 	right:0;
 	top:0;
@@ -146,16 +147,13 @@ header{
 .banner{
 	margin-top:80px;
 	text-align: center;
-}
-
-
-main{
-	text-align: center;
+	width:100%;
 }
 
 .sectiontitle{
 	font-family:monospace,arial,sans-serif;
 	text-decoration: underline;
+	text-align: center;
 	font-size:1em;
 }
 
@@ -189,6 +187,7 @@ main{
 	text-align: left;
 	overflow: auto;
 	min-height:300px;
+	margin: 30px;
 }
 
 .content1and2{
@@ -230,13 +229,13 @@ footer{
 /*Media breakpoints setting*/
 
 @media (max-width:1200px){
-	.wrapper{
+	main{
 		width:80%;
 	}
 }
 
 @media(max-width:800px){
-	.wrapper{
+	main{
 		width:80%;
 	}
 	.productlists{
@@ -264,7 +263,7 @@ footer{
 	.menulist{
 		display:inline-block;
 	}
-	.wrapper{
+	main{
 		width:80%;
 		margin: 0 auto;
 	}
