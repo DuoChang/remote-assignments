@@ -228,16 +228,7 @@ footer{
 
 /*Media breakpoints setting*/
 
-@media (max-width:1200px){
-	main{
-		width:80%;
-	}
-}
-
 @media(max-width:800px){
-	main{
-		width:80%;
-	}
 	.productlists{
 		display:none;
 	}
@@ -252,7 +243,7 @@ footer{
 	.content2about,
 	.content3comment,
 	.content4buy{
-	min-height:450px;
+		min-height:450px;
 	}
 }
 
@@ -263,14 +254,16 @@ footer{
 	.menulist{
 		display:inline-block;
 	}
-	main{
-		width:80%;
-		margin: 0 auto;
-	}
 	.content1and2,
 	.content3and4{
 		display:flex;
 		flex-direction: column;
+	}
+	.content1news,
+	.content2about,
+	.content3comment,
+	.content4buy{
+		min-height:450px;
 	}
 	.banner h1 span{
 		font-size:.5em;
