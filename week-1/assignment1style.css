@@ -1,4 +1,4 @@
-/*Basic style*/
+/*--Basic style--*/
 
 *{
 	box-sizing:border-box;
@@ -67,7 +67,7 @@ footer{
 	background-color: lightgrey ;
 }
 
-/*Pictures & icons*/
+/*--Pictures & icons--*/
 
 .haticon{
 	width: 42px;
@@ -94,7 +94,7 @@ footer{
 	height:56px;
 }
 
-/*Layouts*/
+/*--Layouts--*/
 
 body{
 	left:0;
@@ -190,13 +190,25 @@ header{
 	margin: 30px;
 }
 
+/*.content2about,
+.content4buy{
+	margin-left: 50px
+}*/
+
+
 .content1and2{
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 	max-width: 1200px;
 	display:flex;
 	flex-direction: row;
 }
 
 .content3and4{
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 	max-width: 1200px;
 	display:flex;
 	flex-direction: row;
@@ -226,7 +238,7 @@ footer{
 	min-height: calc(100vh-18.82px);
 }
 
-/*Media breakpoints setting*/
+/*--Media breakpoints setting--*/
 
 @media(max-width:800px){
 	.productlists{
