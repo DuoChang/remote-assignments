@@ -23,14 +23,21 @@ header span{
 
 #hiddenlist{
 	background-color: aqua;
+	border-radius: 5px;
+}
+
+#hiddenlist ul{
+	padding: 15px 50px 10px 0px;
+	margin:16px;
 }
 
 #hiddenlist ul li{
 	font-family:system-ui;
 	font-weight: bold;
-	font-size:1em;
+	font-size:1.5em;
 	background-color: moccasin;
 	border-radius:20%;
+	margin-top:10px;
 }
 
 
@@ -116,6 +123,20 @@ footer{
 	height:42px;
 }
 
+#closebutton{
+	width:26px;
+	height:26px;
+	padding:0px;
+	position:fixed;
+	right:0px;
+	top:42px;
+}
+.closebuttonimge{
+	width:21px;
+	height:21px;
+	text-align: center;
+}
+
 .mainphoto{
 	width:100%;
 	height:auto;
@@ -165,10 +186,15 @@ header{
 }
 
 #hiddenlist{
-	position: absolute;
+	display: none;
+	position: fixed;
 	top:42px;
 	right:0px;
-	text-align: left;
+	z-index: 1;
+}
+
+#hiddenlist ul li{
+	display:block;
 }
 
 .haticon{
@@ -333,10 +359,11 @@ footer{
 
 	#hiddenlist{
 		display:none;
-		position: absolute;
+		position: fixed;
 		top:42px;
 		right:0px;
 		text-align: left;
+		z-index: 1;
 	}
 
 	.banner h1 span{
@@ -369,10 +396,11 @@ footer{
 
 	#hiddenlist{
 		display:none;
-		position: absolute;
+		position: fixed;
 		top:42px;
 		right:0px;
 		text-align: left;
+		z-index: 1;
 	}
 
 	.content1and2,
