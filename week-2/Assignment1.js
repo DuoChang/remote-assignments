@@ -1,8 +1,8 @@
-function max(){ 
+function max(...numbers){ 
 	let maxnum = 0 ;
-	for(let i=0 ; i<arguments.length ; i+=1){
-		if(arguments[i]>maxnum){
-			maxnum=arguments[i];
+	for( let i = 0 ; i < numbers.length ; i+=1){
+		if( numbers[i] > maxnum ){
+			maxnum = numbers[i];
 		}
 	}
 	return maxnum;
