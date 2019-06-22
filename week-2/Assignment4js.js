@@ -72,7 +72,6 @@ name:"Product 3", price:250
 	}
 	return answer;
 }
-/*document.write(twoSum([2,7,11,15],9));*/
 
 
 /*---Assignment4 Request 1---*/

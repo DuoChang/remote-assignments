@@ -24,11 +24,13 @@ header span{
 #hiddenlist{
 	background-color: aqua;
 	border-radius: 5px;
+	height:100vh;
+	width:50vw;
 }
 
 #hiddenlist ul{
-	padding: 15px 50px 10px 0px;
-	margin:16px;
+	padding: 0px 50px 10px 0px;
+	margin: 0px 16px 16px 0px;
 }
 
 #hiddenlist ul li{
@@ -37,7 +39,8 @@ header span{
 	font-size:1.5em;
 	background-color: moccasin;
 	border-radius:20%;
-	margin-top:10px;
+	margin-bottom:10px;
+	width:50px;
 }
 
 
@@ -129,7 +132,7 @@ footer{
 	padding:0px;
 	position:fixed;
 	right:0px;
-	top:42px;
+	top:0px;
 }
 .closebuttonimge{
 	width:21px;
@@ -188,7 +191,7 @@ header{
 #hiddenlist{
 	display: none;
 	position: fixed;
-	top:42px;
+	top:0px;
 	right:0px;
 	z-index: 1;
 }
@@ -360,7 +363,7 @@ footer{
 	#hiddenlist{
 		display:none;
 		position: fixed;
-		top:42px;
+		top:0px;
 		right:0px;
 		text-align: left;
 		z-index: 1;
@@ -397,7 +400,7 @@ footer{
 	#hiddenlist{
 		display:none;
 		position: fixed;
-		top:42px;
+		top:0px;
 		right:0px;
 		text-align: left;
 		z-index: 1;
