@@ -2,8 +2,14 @@ const express = require('express');
 
 const app = express();
 
-app.listen(3000);
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended:false}));
 
-app.get('/',(req,res)=>{
-	res.send('<h1>Hello!My Server!</h1>');
-});
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+const router = require('./router.js');
+
+app.use(router);
+
+app.listen(3000);

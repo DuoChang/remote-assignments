@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <script>
+
+    	function GETNUM10(){
+  
+    		var getSum = new XMLHttpRequest();
+    	
+    		getSum.onreadystatechange=function(){
+  
+    			if(getSum.readyState === 4){
+    				
+    				if (getSum.status === 200){
+
+    					document.getElementById('showtext').innerHTML = getSum.responseText;
+
+					}
+
+    			}
+
+    		};
+
+    		getSum.open('GET','/getData?number=10');
+
+    		getSum.send();
+    	}
+
+
+    	 function GETNUM(){
+
+    		var getNum = new XMLHttpRequest();
+
+    		var inputvalue = document.getElementById('inputnum').value;
+    	
+    		getNum.onreadystatechange=function(){
+   
+    			if(getNum.readyState === 4){
+    				
+    				if (getNum.status === 200){
+
+    					console.log(getNum.responseText);
+   
+    					document.getElementById('showtext').innerHTML = getNum.responseText;
+
+					}
+   
+    			}
+   
+    		};
+
+    		getNum.open('GET','/getData?number=' + inputvalue );
+
+    		getNum.send();
+
+    		document.getElementById('inputnum').value="";
+
+    	}
+
+    	
+    </script>
+ 
+  </head>
+  
+  <body>
+  	
+  	<h1 id="showtext"></h1>
+  	
+  	<button id="button" onclick="GETNUM10()">Get number=10</button>
+
+  	<div>
+
+  		<p>----------</p>
+  	
+  	</div>
+
+  		<input id="inputnum" type="text" name="" placeholder="請輸入任一正整數">
+  		
+  		<button type="submit" onclick="GETNUM()">Get result</button>
+
+  </body>
+
+</html>
