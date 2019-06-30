@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
+app.set('view engine', 'pug');
+
 const router = require('./router.js');
 
 app.use(router);

@@ -61,14 +61,22 @@ expressrouter.get('/getData',(req,res)=>{
 
 });
 
-expressrouter.use('/trackName', express.static('./trackName.html'));
+expressrouter.post('/trackName',(req,res)=>{
+	
+	req.query.name = req.body.username;
+
+	res.cookie('username',req.body.username);
+
+	res.redirect('/myName');
+
+})
 
 expressrouter.get('/myName',(req,res)=>{
 
 
 	if( req.cookies.username == undefined ){
 
-		res.redirect('/trackName');
+		res.render('trackNamepug');
 
 	}else{
 		
@@ -79,5 +87,6 @@ expressrouter.get('/myName',(req,res)=>{
 });
 
 // ?name=使用者的輸入
+
 
 module.exports = expressrouter;
