@@ -40,35 +40,33 @@ expressrouter.post('/SignIn',(req,res)=>{
 
 			if(result[0].id > 0){
 
-				signinjudge = 1 ;
+				return res.send('memberpage');
+
+				assignmentsql.end();
+
+				console.log('登入成功');
 
 			}else{
 
-				signinjudge = 2 ;
+				return res.send('jumpalertin');
+
+				assignmentsql.end();
+
+				console.log('尚未註冊,登入失敗');
+
 			}
 
 		}else{
 
-			signinjudge =2 ;
+			return res.send('jumpalertin');
+
+			console.log('database無資料,登入失敗');
+
+			assignmentsql.end();
+
 		}
 
-
-
 	});
-
-
-	if( signinjudge === 1 ){
-
-		res.send('memberpage');
-
-		assignmentsql.end();
-
-	}else if(signinjudge === 2){
-
-		res.send('jumpalertin');
-
-		assignmentsql.end();
-	}
 
 })
 
@@ -91,44 +89,53 @@ expressrouter.post('/SignUp',(req,res)=>{
 
 	var selectdata = 'SELECT id FROM user WHERE email=\'' + req.body.email + '\' AND password=\'' + req.body.password + '\'';
 
-	var signupjupge;
-
 	assignmentsql.query( selectdata , (err,result)=>{
 
 		if(err) throw err;
 
-		if( result[0].id > 0 ){
+		if( result.length > 0){
 
-			signupjupge = 1 ;
+			if( result[0].id > 0 ){
 
+				return res.send('jumpalertup');
+
+				console.log('已有註冊');
+
+				assignmentsql.end();
+
+			}else{
+
+				var data = {email:req.body.email, password:req.body.password};
+
+				assignmentsql.query( 'INSERT INTO user SET ?' , data, (err,result)=>{
+					if(err) throw err;			
+				});
+
+				return res.send('memberpage');
+
+				console.log('註冊成功');
+
+				assignmentsql.end();
+
+			}
 		}else{
 
-			signupjupge = 0 ;
+			var data = {email:req.body.email, password:req.body.password};
+
+			assignmentsql.query( 'INSERT INTO user SET ?' , data, (err,result)=>{
+				if(err) throw err;
+
+			});
+
+			return res.send('memberpage');			
+
+			console.log('database無資料,註冊成功');
+
+			assignmentsql.end();
 
 		}
 
 	});
-
-	console.log(signupjupge);
-
-	if(signupjupge === 1){
-
-		res.send('jumpalertup');
-
-		assignmentsql.end();
-
-	}else if(signupjupge === 0){
-
-		var data = {email:req.body.email, password:req.body.password};
-
-		assignmentsql.query( 'INSERT INTO user SET ?' , data, (err,result)=>{
-			if(err) throw err;
-		});
-
-		res.send('memberpage');
-
-		assignmentsql.end();
-	}
 	
 })
 
