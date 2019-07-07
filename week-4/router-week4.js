@@ -40,27 +40,27 @@ expressrouter.post('/SignIn',(req,res)=>{
 
 			if(result[0].id > 0){
 
+				console.log('登入成功');
+				
 				return res.send('memberpage');
 
 				assignmentsql.end();
 
-				console.log('登入成功');
-
 			}else{
 
+				console.log('尚未註冊,登入失敗');
+				
 				return res.send('jumpalertin');
 
 				assignmentsql.end();
-
-				console.log('尚未註冊,登入失敗');
 
 			}
 
 		}else{
 
-			return res.send('jumpalertin');
-
 			console.log('database無資料,登入失敗');
+
+			return res.send('jumpalertin');			
 
 			assignmentsql.end();
 
@@ -97,9 +97,9 @@ expressrouter.post('/SignUp',(req,res)=>{
 
 			if( result[0].id > 0 ){
 
-				return res.send('jumpalertup');
-
 				console.log('已有註冊');
+				
+				return res.send('jumpalertup');
 
 				assignmentsql.end();
 
@@ -110,10 +110,10 @@ expressrouter.post('/SignUp',(req,res)=>{
 				assignmentsql.query( 'INSERT INTO user SET ?' , data, (err,result)=>{
 					if(err) throw err;			
 				});
-
-				return res.send('memberpage');
-
+				
 				console.log('註冊成功');
+				
+				return res.send('memberpage');
 
 				assignmentsql.end();
 
@@ -127,9 +127,9 @@ expressrouter.post('/SignUp',(req,res)=>{
 
 			});
 
-			return res.send('memberpage');			
+			console.log('database無資料,註冊成功');			
 
-			console.log('database無資料,註冊成功');
+			return res.send('memberpage');
 
 			assignmentsql.end();
 

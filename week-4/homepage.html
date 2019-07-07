@@ -26,6 +26,8 @@
 
               let backdatasignin = getNum.responseText;
 
+              console.log('登入收到response');
+
               if (backdatasignin === 'jumpalertin'){
 
                 alert( 'No member record, please sign up first!' );
@@ -70,6 +72,8 @@
           if(getData.readyState === 4){
             
            if (getData.status === 200){
+
+              console.log('收到 sign up response');
 
               let backdatasignup = getData.responseText;
 
