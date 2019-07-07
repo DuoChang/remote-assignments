@@ -86,7 +86,5 @@ expressrouter.get('/myName',(req,res)=>{
 
 });
 
-// ?name=使用者的輸入
-
 
 module.exports = expressrouter;

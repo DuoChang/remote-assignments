@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="assignmentweek4style.css">
+
+    <script>
+
+    	 function SignIn(){
+
+    		var getNum = new XMLHttpRequest();
+
+    		var inputmail = document.getElementById('email').value;
+
+        var inputpass = document.getElementById('password').value;
+    	
+    		getNum.onreadystatechange=function(){
+   
+    			if(getNum.readyState === 4){
+    				
+    				if (getNum.status === 200){
+
+              let backdatasignin = getNum.responseText;
+
+              if (backdatasignin === 'jumpalertin'){
+
+                alert( 'No member record, please sign up first!' );
+
+              }else if(backdatasignin === 'memberpage'){
+
+                window.location.replace('http://localhost:3000/memberpage');
+
+              }
+   
+    					
+					   }
+   
+    			}
+   
+    		};
+
+    		getNum.open('POST','/SignIn');
+
+        getNum.setRequestHeader("Content-Type",
+              "application/x-www-form-urlencoded");
+
+    		getNum.send('email='+inputmail + '&' + 'password=' + inputpass);
+
+    		document.getElementById('email').value="";
+
+        document.getElementById('password').value="";
+
+
+    	}
+
+      function SignUp(){
+
+        var getData = new XMLHttpRequest();
+
+        var inputmail = document.getElementById('email').value;
+
+        var inputpass = document.getElementById('password').value;
+      
+        getData.onreadystatechange=function(){
+
+          if(getData.readyState === 4){
+            
+           if (getData.status === 200){
+
+              let backdatasignup = getData.responseText;
+
+              if (backdatasignup === 'jumpalertup'){
+
+                alert( 'Have member record already, please sign in or sign up with new info!' );
+
+              }else if(backdatasignup === 'memberpage'){
+
+                window.location.replace('http://localhost:3000/memberpage');
+
+              }
+              
+            }
+   
+          }
+
+        };
+
+        getData.open('POST','/SignUp');
+
+        getData.setRequestHeader("Content-Type",
+              "application/x-www-form-urlencoded");
+
+        getData.send('email='+inputmail + '&' + 'password=' + inputpass);
+
+        document.getElementById('email').value="";
+
+        document.getElementById('password').value="";
+
+      }
+
+
+    	
+    </script>
+ 
+  </head>
+  
+  <body>
+
+  	<div class='login'>
+
+      <div class='emailinput'>
+
+        <label class='maillabel'>E-Mail：</label>
+
+    		  <input id="email" type="text" name="email" placeholder='Ex:g777710@hotmail.com'>
+
+      </div>
+
+      <div class='passwordinput'>
+
+        <label>Password：</label>
+
+         <input id="password" type="password" name="password">
+
+      </div>
+
+      <div class='buttons'>
+
+        <form>
+      
+        <button id='signin' type="submit" onclick="SignIn()">Sign In</button>
+
+        <button id='signup' type="submit" onclick="SignUp()">Sign Up</button>
+
+      </div>
+  	
+  	</div>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,50 @@
+body{
+	text-align: center;
+	margin: 20vh 10vw;
+}
+
+.login{
+
+	text-align: center;
+	margin:auto;
+	border: 3px double black;
+	border-radius: 2px;
+	width:40vw;
+	height: 60vh;
+	overflow: auto;
+
+}
+
+.emailinput,
+.passwordinput,
+.buttons{
+	text-align: center;
+	display:flex;
+	flex-direction: row;
+	margin-top:10vh;
+	margin-left:10vw;
+}
+
+.buttons{
+	margin-left: 13vw;
+}
+
+.buttons button{
+	font-family: Georgia;
+}
+
+label{
+	font-family: monospace;
+	font-size:1em;
+}
+
+#signin,
+#signup{
+	padding:5px;
+	margin:10px;
+	border-radius: .5px;
+}
+
+.maillabel{
+	margin-right: 1vw;
+}

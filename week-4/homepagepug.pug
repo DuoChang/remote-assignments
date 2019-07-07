@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', type='text/css', href='style/assignmentweek4style.css')
+    script.
+      function SignIn(){
+      var getNum = new XMLHttpRequest();
+      var inputmail = document.getElementById('email').value;
+      var inputpass = document.getElementById('password').value;
+      getNum.onreadystatechange=function(){
+      // if(getNum.readyState === 4){
+      // 	if (getNum.status === 200){
+      // 		console.log(getNum.responseText);
+      //        let backdata = getNum.responseText;
+      //        if (backdata === ){
+      //          alert( 'No member record, please sign up first!' );
+      //        }
+      //  }
+      // }
+      };
+      getNum.open('POST','/SignIn');
+      getNum.send();
+      document.getElementById('email').value="";
+      document.getElementById('password').value="";
+      }
+      function SignUp(){
+      var getData = new XMLHttpRequest();
+      var inputmail = document.getElementById('email').value;
+      var inputpass = document.getElementById('password').value;
+      getData.onreadystatechange=function(){};
+      getData.open('POST','/SignUp');
+      getData.send();
+      document.getElementById('email').value="";
+      document.getElementById('password').value="";
+      }
+  body
+    .login
+      .emailinput
+        label.maillabel E-Mail：
+        input#email(type='text', name='email', placeholder='Ex:g777710@hotmail.com')
+      .passwordinput
+        label Password：
+        input#password(type='password', name='password')
+      .buttons
+        button#signin(type='submit', onclick='SignIn()') Sign In
+        button#signup(type='submit', onclick='SignUp()') Sign Up
