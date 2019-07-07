@@ -16,20 +16,20 @@ const mysql = require('mysql');
 
 /*--連線sql並新建DB & Table--*/
 
-var assignmentsql = mysql.createConnection({
+// var assignmentsql = mysql.createConnection({
 
-	host:'localhost',
-	port:'3306',
-	user:'root',
-	password:'pega@duo0707',
-	database:'assignment'
+// 	host:'localhost',
+// 	port:'3306',
+// 	user:'root',
+// 	password:'pega@duo0707',
+// 	database:'assignment'
 
-});
+// });
 
-assignmentsql.connect(function(err){
-	if(err) throw err;
-	console.log("Connected");
-});
+// assignmentsql.connect(function(err){
+// 	if(err) throw err;
+// 	console.log("Connected");
+// });
 
 
 /*--新建DB & table, 新建後無需此批code--*/
@@ -48,7 +48,7 @@ assignmentsql.connect(function(err){
 
 /*--結束sql連線--*/
 
-assignmentsql.end();
+// assignmentsql.end();
 
 const router = require('./router-week4.js');
 
